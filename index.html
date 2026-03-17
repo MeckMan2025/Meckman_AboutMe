@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Andrew Meckley</title>
+    <meta name="description" content="Andrew Meckley - Builder, Product Leader, Mentor">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000000;
+            color: #FFFFFF;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .page {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 80px 24px 120px;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            margin-bottom: 100px;
+        }
+
+        .hero-photo-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 40px;
+        }
+
+        .hero-photo-frame {
+            position: absolute;
+            top: -12px;
+            left: -12px;
+            width: calc(100% + 24px);
+            height: calc(100% + 24px);
+            border-radius: 50%;
+            border: 1px solid rgba(255, 242, 204, 0.5);
+            pointer-events: none;
+        }
+
+        .hero-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center 10%;
+            display: block;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            margin-bottom: 12px;
+        }
+
+        .hero-tagline {
+            font-size: 1.1rem;
+            color: #FFF2CC;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+
+        .hero-links {
+            margin-top: 20px;
+        }
+
+        .hero-links a {
+            color: #CCCCCC;
+            text-decoration: none;
+            font-size: 0.95rem;
+            letter-spacing: 0.05em;
+        }
+
+        .hero-links a:hover {
+            color: #CC0000;
+        }
+
+        .hero-links svg {
+            width: 18px;
+            height: 18px;
+            vertical-align: middle;
+            margin-right: 6px;
+            fill: currentColor;
+        }
+
+        /* Divider */
+        .divider {
+            text-align: center;
+            margin: 80px 0;
+            position: relative;
+        }
+
+        .divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            right: 10%;
+            height: 1px;
+            background-color: rgba(255, 242, 204, 0.2);
+        }
+
+        .divider-dot {
+            position: relative;
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: #CC0000;
+            border-radius: 50%;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 48px;
+        }
+
+        .section p {
+            font-size: 1.05rem;
+            color: #CCCCCC;
+            margin-bottom: 24px;
+        }
+
+        .section p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Cards */
+        .card {
+            background-color: #2A2A2A;
+            border: 1px solid rgba(255, 242, 204, 0.25);
+            border-radius: 10px;
+            padding: 28px 32px;
+            margin: 32px 0;
+        }
+
+        .card p {
+            color: #CCCCCC;
+            font-size: 1.05rem;
+        }
+
+        .card a {
+            color: #FFF2CC;
+            text-decoration: none;
+        }
+
+        .card a:hover {
+            color: #CC0000;
+        }
+
+        /* Philosophy */
+        .philosophy {
+            background-color: #2A2A2A;
+            border: 1px solid rgba(255, 242, 204, 0.25);
+            border-radius: 12px;
+            padding: 40px 36px;
+            text-align: center;
+        }
+
+        .philosophy p {
+            font-size: 1.15rem;
+            color: #FFFFFF;
+            line-height: 1.9;
+        }
+
+        .philosophy .spark {
+            color: #CC0000;
+            font-weight: 600;
+        }
+
+        /* Schematic background pattern */
+        .schematic-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.05;
+            background-image:
+                linear-gradient(rgba(255, 242, 204, 0.3) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 242, 204, 0.3) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .page {
+                padding: 48px 20px 80px;
+            }
+
+            .hero {
+                margin-bottom: 64px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-tagline {
+                font-size: 0.95rem;
+            }
+
+            .hero-photo {
+                width: 140px;
+                height: 140px;
+            }
+
+            .divider {
+                margin: 56px 0;
+            }
+
+            .philosophy {
+                padding: 28px 24px;
+            }
+
+            .card {
+                padding: 24px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="schematic-bg"></div>
+
+    <main class="page">
+        <section class="hero">
+            <div class="hero-photo-wrapper">
+                <div class="hero-photo-frame"></div>
+                <img src="Andrew_Meckley.jpeg" alt="Andrew Meckley" class="hero-photo">
+            </div>
+            <h1>Andrew Meckley</h1>
+            <p class="hero-tagline">Builder &middot; Product Leader &middot; Mentor</p>
+            <div class="hero-links">
+                <a href="https://www.linkedin.com/in/andrew-meckley-44763080/" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
+            </div>
+        </section>
+
+        <section class="section">
+            <p>I believe anyone can go from idea to prototype in a weekend. Meckman Lab is where I prove it.</p>
+        </section>
+
+        <section class="section">
+            <p>This is my public workshop for experiments in AI, robotics, computer vision, and web applications. Every project here started as a question: What if I could build an autonomous rover that follows waypoints? A dashboard that tracks economic health across entire industries? A 3D platformer starring a scanned version of myself? Each one shipped. Each one taught me something new.</p>
+        </section>
+
+        <section class="section">
+            <p>I build because building is how I learn. I publish because I believe your work should be visible. A portfolio isn't a resume. It's proof that you ship, that you're curious, and that you're always getting better.</p>
+        </section>
+
+        <section class="section">
+            <p>The technology stack changes constantly. Right now I'm deep in AI, from LLM powered assistants and image generation to computer vision and motion tracking. I build on Cloudflare Workers, React, Three.js, and whatever else the project demands. The tools don't matter as much as the habit: pick a problem, build something, put it in the world.</p>
+        </section>
+
+        <div class="divider"><span class="divider-dot"></span></div>
+
+        <div class="card">
+            <p>I studied Agriculture Systems Technology at Iowa State University and earned an MBA from the University of Iowa. One taught me how machines and technology work together. The other taught me how to build and scale the business around it. Both gave me a foundation to keep learning long after the classroom.</p>
+        </div>
+
+        <div class="divider"><span class="divider-dot"></span></div>
+
+        <section class="section">
+            <p>I'm a FIRST Robotics mentor and FFA alumni, mentor, and supporter. I give hundreds of hours and dollars to these organizations every year because the best thing you can do with what you've learned is help someone else get started sooner. These programs build the technologists and leaders of the future, and I want to inspire others to support them too.</p>
+        </section>
+
+        <div class="card">
+            <p>If you're moved to give, you can donate to <a href="https://www.firstinspires.org/donate" target="_blank" rel="noopener">FIRST Robotics</a> or support <a href="https://www.ffa.org/ways-to-give/" target="_blank" rel="noopener">FFA</a>.</p>
+        </div>
+
+        <div class="divider"><span class="divider-dot"></span></div>
+
+        <div class="philosophy">
+            <p>Work hard. Be nice. <span class="spark">Be helpful.</span></p>
+        </div>
+    </main>
+</body>
+</html>
